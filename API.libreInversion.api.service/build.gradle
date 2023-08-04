@@ -1,0 +1,51 @@
+description = 'API.libreInversion.api.service'
+apply plugin: 'eclipse'
+
+dependencies {	
+
+	compile group: 'org.glassfish', name: 'javax.json', version: '1.0.4'
+	
+	compile "com.sun.jersey:jersey-client:1.19"
+	compile group: 'org.glassfish.jersey.core', name: 'jersey-client', version: '2.24.1'
+	compile group: 'com.sun.jersey', name: 'jersey-client', version: '1.19'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.1'
+    
+	compile "co.com.bancolombia:LI.lib.commons:2.0.5"
+	compile "co.com.bancolombia:LI.lib.dto:1.0.46"
+	compile "co.com.bancolombia:AW1299001.lib.AuthClienteOTP:1.0.6"
+	compile "co.com.bancolombia:AW1299001.lib.AuthFuerte:1.0.3"
+	compile "co.com.bancolombia:AW1299001.lib.GeneracionToken:1.0.6"
+	compile "co.com.bancolombia:AW1299001.lib.GenerarOTP:1.0.10"
+	compile "co.com.bancolombia:AW1299001.lib.ApiAutenticacion:1.0.38"
+	compile "co.com.bancolombia:AW1299001.lib.GestionCreditoConsumo:1.0.3"
+	compile "co.com.bancolombia:AW1299001.lib.GestionPrecalculadoCliente:1.0.0"
+	compile "co.com.bancolombia:AW1299001.lib.ConsultaProductosDeposito:1.0.0"
+	compile "co.com.bancolombia:AW1299001.lib.ConsultaDatosComercialesSucursal:1.0.0"
+	compile "co.com.bancolombia:AW1299001.lib.RecuperarDatosCliente:1.0.0"
+
+	implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.14.2'
+	implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.14.2'
+	compile group: 'org.apache.httpcomponents', name: 'httpcore', version: '4.4.6'
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.13'
+	compile group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.25'
+	compile group: 'com.itextpdf', name: 'itextpdf', version: '5.5.13.1'
+	compile group: 'com.itextpdf.tool', name: 'xmlworker', version: '5.5.13.1'
+	compile group: 'commons-io', name: 'commons-io', version: '2.11.0'
+	implementation(group: 'co.com.bancolombia', name: 'AW0937001_VTD_Libreria_Persistencia', version: '4.2.4')
+    implementation( group: 'co.com.bancolombia', name: 'VTD.librerias.comunes', version: '1.8.0')
+
+	implementation group: 'com.sun.mail', name: 'javax.mail', version: '1.5.5'
+	implementation 'org.apache.velocity:velocity-engine-core:2.3'
+	implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.17.2'
+	implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.2'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.17.2'
+	implementation group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version: '2.13.3'
+ 	// Librerias de pruebas
+    testImplementation(group: 'junit', name: 'junit', version: '4.12')
+	testCompile group: 'org.mockito', name: 'mockito-core', version: '2.15.0'
+	testCompile group: 'org.hamcrest', name: 'java-hamcrest', version: '2.0.0.0'
+
+	testCompile 'org.glassfish.jersey.core:jersey-common:2.22.2'
+	compile 'joda-time:joda-time:2.10.7'
+}
+

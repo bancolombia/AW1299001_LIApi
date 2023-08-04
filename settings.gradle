@@ -1,0 +1,2 @@
+rootProject.name = 'API.libreInversion.api'
+include 'API.libreInversion.api.service', 'API.libreInversion.api.web'

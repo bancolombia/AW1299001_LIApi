@@ -1,0 +1,20 @@
+CODIGO|NOMBRE
+0|Avenida
+1|Bulevar
+2|Calle
+3|Carrera
+4|Carretera
+5|Circular
+6|Circunvalar
+7|Diagonal
+8|Transversal
+9|Troncal
+10|Variante
+11|Vía
+12|Corregimiento
+13|Kilometro
+14|Vereda
+15|Autopista
+16|Manzana
+17|Avenida Calle
+18|Avenida Carrera

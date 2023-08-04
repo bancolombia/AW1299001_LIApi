@@ -1,0 +1,52 @@
+allprojects {
+	apply plugin: 'cobertura'
+	apply plugin: 'java'
+	sourceCompatibility=1.8
+	targetCompatibility=1.8
+	compileJava.options.encoding = 'UTF-8'
+
+	tasks.withType(JavaCompile) {
+	    options.encoding = 'UTF-8'
+	}
+    
+	dependencies {
+		    // Librerias de pruebas
+	    testImplementation(group: 'junit', name: 'junit', version: '4.13.1')
+		testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+		testCompile group: 'org.powermock', name: 'powermock-api-mockito', version: '1.7.4'
+		testCompile group: 'org.powermock', name: 'powermock-module-junit4', version: '1.7.4'
+	}
+
+	repositories {
+		//remote
+		maven { url 'https://artifactory.apps.bancolombia.com/maven-bancolombia'}
+        mavenLocal()
+	}
+	
+	wrapper() {
+	    gradleVersion = '4.4' 
+	    distributionUrl 'https://artifactory.apps.bancolombia.com/gradlew/gradle-4.4-bin.zip'
+	}
+
+}
+
+subprojects {
+    cobertura {
+        coverageIgnoreTrivial = true
+    }
+}
+buildscript {
+    repositories {
+        maven { url 'https://artifactory.apps.bancolombia.com/maven-bancolombia'}
+    }
+    dependencies {
+        classpath "net.saliman:gradle-cobertura-plugin:2.5.3"
+    }
+}
+def files = subprojects.collect { new File(it.projectDir, '/build/cobertura/cobertura.ser') }
+cobertura {
+    coverageFormats = [ 'xml', 'html' ]
+	coverageSourceDirs = subprojects.sourceSets.main.allSource.srcDirs.flatten()
+    coverageMergeDatafiles = files
+}
+test.dependsOn(subprojects.test)

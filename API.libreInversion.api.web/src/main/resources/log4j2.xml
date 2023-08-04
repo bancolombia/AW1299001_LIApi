@@ -1,0 +1,13 @@
+<Configuration status="INFO">
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout
+					pattern="[IBM-BC-PROCESO-PREAPROBADOS-SUC-CONSUMO] %d{yyyy-MM-dd HH:mm:ss} [IdSession : %X{sessionId}] [IP : %X{ipCliente}] %-5p - %m%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="info" additivity="false">
+			<AppenderRef ref="console" />
+		</Root>
+	</Loggers>
+</Configuration>
